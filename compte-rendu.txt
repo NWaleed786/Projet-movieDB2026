@@ -1,0 +1,69 @@
+Projet : API Movie DB - recherche des films et des acteurs
+
+Compte rendu simple - niveau BTS SIO 1re année
+
+1. Rôle des attributs du formulaire
+- action : indique la page qui reçoit les données du formulaire.
+- method : indique la méthode d'envoi des données, par exemple get ou post.
+- name : donne un nom au champ pour pouvoir récupérer sa valeur en PHP avec $_GET ou $_POST.
+
+2. Différence entre GET et POST
+- GET envoie les données dans l'URL. C'est pratique pour une recherche.
+- POST envoie les données de façon plus discrète dans la requête HTTP.
+- GET est souvent utilisé pour les formulaires simples de recherche.
+- POST est souvent utilisé pour les formulaires de connexion, d'inscription ou quand on envoie plus de données.
+
+3. Vérifications faites dans le projet
+Dans les pages search-movies.php et search-acteurs.php, j'ai utilisé :
+- isset pour vérifier si le champ query existe.
+- trim pour supprimer les espaces au début et à la fin.
+- un test sur une chaîne vide pour vérifier si le champ est vide.
+
+4. Fichiers modifiés ou ajoutés
+- header.php
+- footer.php
+- fonctions.php
+- popular.php
+- topRated.php
+- genreMovies.php
+- search-movies.php
+- search-acteurs.php
+- movie.php
+- acteur.php
+- index.php
+
+5. Fonctions écrites
+Dans fonctions.php :
+- callTmdb() : fonction générale pour appeler l'API.
+- popularMovies() : récupère les films populaires.
+- topRatedMovies() : récupère les films les mieux notés.
+- moviesByGenre() : récupère les films par genre.
+- searchMovies() : recherche un film avec un mot-clé.
+- searchActeurs() : recherche un acteur avec un mot-clé.
+- movieDetails() : récupère le détail d'un film.
+- movieCredits() : récupère les principaux acteurs d'un film.
+- acteurDetails() : récupère la fiche d'un acteur.
+- acteurMovies() : récupère les principaux films joués par un acteur.
+
+6. Format des données retournées
+L'API retourne des données au format JSON.
+Ensuite j'utilise json_decode(..., true) pour transformer le JSON en tableau associatif PHP.
+
+7. Affichage des résultats
+- Les films sont affichés avec une affiche, un titre, parfois un résumé court et un bouton Voir.
+- Les acteurs sont affichés avec une photo, un nom et un bouton Voir.
+- La fiche film affiche l'image, le résumé, la date, la note et les principaux acteurs.
+- La fiche acteur affiche la photo, la biographie et les principaux films.
+
+8. Autre utilisation de l'API proposée
+J'ai ajouté deux utilisations supplémentaires :
+- la fiche détaillée d'un film avec ses principaux acteurs
+- la fiche détaillée d'un acteur avec les principaux films dans lesquels il a joué
+
+9. Conclusion
+Le projet permet de mieux comprendre :
+- les formulaires HTML
+- la récupération des données en GET
+- les fonctions PHP
+- l'utilisation d'une API REST
+- l'affichage dynamique de résultats dans une page web
